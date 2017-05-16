@@ -18,6 +18,7 @@ if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name 
         $title = $menu_item->title;
         $url = $menu_item->url;
 
+        // condition if the title of the element = something echo the class of my icon
         switch ($title) {
             case 'profile':
                 $nav_icon = 'fa-user';
@@ -53,13 +54,14 @@ if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name 
 
             case 'contact':
                 $nav_icon = 'fa-envelope';
-                break; 
+                break;
 
+            // my default icon
             default:
                 $nav_icon = 'fa-eercast';
                 break;
         }
-
+        // menu list
         $menu_list .= '<li><a href="' . $url . '"><i class="fa '.$nav_icon.'" ></i> ' . $title . '</a></li>';
     }
     $menu_list .= '</ul>';
